@@ -1,20 +1,21 @@
-// allows me to use express library
 const express = require('express');
-
-//allows me to work with file and directory paths within node
 const path = require('path');
-
+const fs = require('fs');
+const util = require('util');
 const db = require('./db/db.json')
-// app.use(express.urlencoded({ extended: true }));
 
-// Executes express
+const uuid = require('./helpers/uuid');
+
+const PORT = 1337;
+
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+
 
 
 app.use(express.json());
 
 // Port where website will be hosted
-const PORT = 1337;
 
 // Allows me to render the contents within the public folder onto the website
 app.use(express.static('public'));
