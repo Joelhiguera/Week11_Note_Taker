@@ -12,7 +12,7 @@ router.get('/notes', (req, res)=> {
 
 
 
-router.post('/api/notes', (req, res) =>{
+router.post('/notes', (req, res) =>{
   req.body.id = uuidv4()
   res.json(newNote(req.body, notes))
   
