@@ -3,7 +3,7 @@ const { notes } = require("../db/note.json")
 
 const { v4:uuidv4 } = require("uuid");
 const { newNote } = require("../lib/notes");
-const { deletedNote } = require("../lib/notes");
+// const { deletedNote } = require("../lib/notes");
 
 
 
