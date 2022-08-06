@@ -32,4 +32,5 @@ function deletedNote(id) {
 }
 
 module.exports = { newNote }
+module.exports = { deletedNote}
 
