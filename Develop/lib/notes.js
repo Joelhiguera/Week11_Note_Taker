@@ -19,18 +19,22 @@ function newNote(body, notesArray) {
 } 
 
 
-// read all the notes from the note.json file
-// remove the note with the given id property
-// rewrite notes to the note.json
-// function deletedNote(id) {
-//   let id = 
-//   fs.readFileSync(
-//     path.join(__dirname, "../db/note.json"),
-//     console.log(id)
-    
-//   )
-// }
 
-module.exports = { newNote }
-// module.exports = { deletedNote }
+function deletedNote(id, notesArray) {
+  for(i = 0; i < notesArray.length; i++){
+    if (id === notesArray[i].id){
+      notesArray.splice(i, 1)
+      fs.writeFileSync(
+        path.join(__dirname, "../db/note.json"),
+        JSON.stringify({notes: notesArray}, null, 2)
+      ) 
+    }
+  }
+
+ 
+  
+}
+
+module.exports = { newNote, deletedNote }
+
 

@@ -3,7 +3,7 @@ const { notes } = require("../db/note.json")
 
 const { v4:uuidv4 } = require("uuid");
 const { newNote } = require("../lib/notes");
-// const { deletedNote } = require("../lib/notes");
+const { deletedNote } = require("../lib/notes");
 
 
 
@@ -26,8 +26,11 @@ router.post('/notes', (req, res) =>{
 //so do i call the function within the router.delete?
 router.delete('/notes/:id', (req, res) => {
   let deleted = req.params.id
+  
   console.log(deleted)
-  res.json(deleted)  
+
+
+  res.json(deletedNote(deleted, notes))  
 })
 
 module.exports = router
